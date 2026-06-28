@@ -1,1 +1,862 @@
-# portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alizba Fatima - BCA Professional | Data Analytics & Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1E3A5F;
+            --primary-dark: #16283B;
+            --accent: #2563EB;
+            --accent-light: #E0E7FF;
+            --text-dark: #111827;
+            --text-light: #4B5563;
+            --bg-light: #F8FAFC;
+            --bg-white: #FFFFFF;
+            --border: #E2E8F0;
+            --success: #059669;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-white);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1E3A5F 0%, #16283B 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section */
+        section {
+            padding: 4rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        /* Quick Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            border-top: 3px solid var(--accent);
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(30, 58, 95, 0.08);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        /* About Section */
+        #about {
+            background: var(--bg-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .about-highlights {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .about-highlights li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+
+        .about-highlights li::before {
+            content: "•";
+            display: inline-block;
+            width: auto;
+            height: auto;
+            background: none;
+            color: var(--accent);
+            border-radius: 0;
+            text-align: left;
+            line-height: auto;
+            margin-right: 0.75rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Skills Section */
+        #skills {
+            background: var(--bg-white);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            border-top: 3px solid var(--primary);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(30, 58, 95, 0.15);
+        }
+
+        /* Projects Section */
+        #projects {
+            background: var(--bg-light);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-white);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border-top: 4px solid var(--accent);
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(30, 58, 95, 0.12);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, #1E3A5F 0%, #16283B 100%);
+            color: white;
+            padding: 2rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-date {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .project-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tool-badge {
+            background: var(--bg-light);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Education Section */
+        #education {
+            background: var(--bg-white);
+        }
+
+        .education-timeline {
+            margin-top: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--bg-light);
+        }
+
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 2rem;
+            width: 2px;
+            height: calc(100% + 0.5rem);
+            background: var(--border);
+        }
+
+        .timeline-item:last-child::after {
+            display: none;
+        }
+
+        .timeline-content {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-content .year {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #1E3A5F 0%, #16283B 100%);
+            color: white;
+            text-align: center;
+        }
+
+        #contact h2 {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+
+        .contact-item a {
+            color: #E0E7FF;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-card, .skill-category, .project-card {
+            animation: slideInUp 0.5s ease-out forwards;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.05s; }
+        .stat-card:nth-child(2) { animation-delay: 0.1s; }
+        .stat-card:nth-child(3) { animation-delay: 0.15s; }
+        .stat-card:nth-child(4) { animation-delay: 0.2s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">AF</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Alizba Fatima</h1>
+            <p class="tagline">BCA Professional | Data Management & Analytics</p>
+            <p class="subtitle">Specialized in database optimization, data analysis, and business intelligence solutions</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Contact</a>
+                <a href="mailto:alizbafatima211@gmail.com" class="btn btn-secondary">Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section id="stats">
+        <div class="container">
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Academic Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Technical Skills</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Commitment</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>Professional Profile</h2>
+            <p class="section-subtitle">Motivated BCA graduate with comprehensive expertise in data management systems and analytical solutions</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a detail-oriented BCA professional with a strong foundation in database management systems, SQL optimization, and business analytics. With hands-on experience in developing data solutions and managing complex information systems, I am committed to delivering accurate, efficient, and scalable data management outcomes.</p>
+                    <p>My academic background at Chandigarh University has equipped me with comprehensive knowledge of information technology fundamentals, software development methodologies, and enterprise database architecture. I bring both technical proficiency and analytical thinking to every project.</p>
+                    <ul class="about-highlights">
+                        <li><strong>Database Administration:</strong> SQL expertise with advanced CRUD operations and query optimization</li>
+                        <li><strong>Data Analytics:</strong> Excel analysis, visualization, and business intelligence fundamentals</li>
+                        <li><strong>System Development:</strong> C programming and structured database design</li>
+                        <li><strong>Business Operations:</strong> Data entry management, process optimization, documentation</li>
+                        <li><strong>Professional Standards:</strong> Attention to detail, reliability, and collaborative approach</li>
+                    </ul>
+                </div>
+                <div>
+                    <div style="background: linear-gradient(135deg, #1E3A5F 0%, #16283B 100%); border-radius: 1rem; padding: 3rem 2rem; color: white;">
+                        <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">Career Objectives</h3>
+                        <p style="opacity: 0.95; line-height: 1.8;">Seeking entry-level positions in data management, business analytics, or operational roles where technical expertise and analytical skills contribute to organizational efficiency and growth. Committed to continuous professional development and applying academic knowledge in practical business environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <p class="section-subtitle">Core competencies and tools I work with</p>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C Programming</span>
+                        <span class="skill-tag">HTML & CSS</span>
+                        <span class="skill-tag">Logic Building</span>
+                        <span class="skill-tag">Data Structures</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Databases & Analytics</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SQL Queries</span>
+                        <span class="skill-tag">Data Retrieval</span>
+                        <span class="skill-tag">Database Design</span>
+                        <span class="skill-tag">Data Filtering</span>
+                        <span class="skill-tag">CRUD Operations</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Office & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Excel (Advanced)</span>
+                        <span class="skill-tag">Word</span>
+                        <span class="skill-tag">PowerPoint</span>
+                        <span class="skill-tag">Google Sheets</span>
+                        <span class="skill-tag">Canva</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Professional</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data Entry</span>
+                        <span class="skill-tag">Data Cleaning</span>
+                        <span class="skill-tag">Lead Generation</span>
+                        <span class="skill-tag">Email Management</span>
+                        <span class="skill-tag">Research</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>Key Projects</h2>
+            <p class="section-subtitle">Practical implementations demonstrating technical capabilities and analytical approach</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Student Database Management System</h3>
+                        <p class="project-date">2025 | Chandigarh University</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Developed a comprehensive database solution for managing student academic records with integrated data validation and retrieval mechanisms.</p>
+                        <ul style="list-style: none; color: var(--text-light);">
+                            <li>Complete CRUD operations for student data management</li>
+                            <li>Advanced SQL query optimization for data retrieval</li>
+                            <li>Menu-driven interface using C programming</li>
+                            <li>Data integrity testing and validation procedures</li>
+                        </ul>
+                        <div class="project-tools">
+                            <span class="tool-badge">C Programming</span>
+                            <span class="tool-badge">SQL</span>
+                            <span class="tool-badge">Database Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Data Analysis and Reporting Project</h3>
+                        <p class="project-date">2025 | Self-Initiated Professional Development</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Executed comprehensive data collection, processing, and analysis of 100+ student performance records with structured reporting.</p>
+                        <ul style="list-style: none; color: var(--text-light);">
+                            <li>Data collection and normalization procedures</li>
+                            <li>Excel analysis using advanced functions and formulas</li>
+                            <li>Business intelligence visualization and charting</li>
+                            <li>Data quality assurance and anomaly detection</li>
+                        </ul>
+                        <div class="project-tools">
+                            <span class="tool-badge">Microsoft Excel</span>
+                            <span class="tool-badge">Data Analysis</span>
+                            <span class="tool-badge">Business Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Technical Competency Development</h3>
+                        <p class="project-date">Ongoing | Professional Growth Initiative</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Comprehensive professional development across multiple technical domains through structured learning, certifications, and practical application.</p>
+                        <ul style="list-style: none; color: var(--text-light);">
+                            <li>Software development fundamentals and architecture</li>
+                            <li>Database management and optimization principles</li>
+                            <li>Business analytics and reporting methodologies</li>
+                            <li>Enterprise tools and professional software proficiency</li>
+                        </ul>
+                        <div class="project-tools">
+                            <span class="tool-badge">Professional Development</span>
+                            <span class="tool-badge">Certifications</span>
+                            <span class="tool-badge">Technical Skills</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Educational Background</h2>
+            <p class="section-subtitle">Academic qualifications and professional certifications</p>
+            
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Bachelor of Computer Applications (BCA)</h3>
+                        <p class="year">2025 – Present | Chandigarh University</p>
+                        <p>Comprehensive three-year undergraduate program focused on computer science fundamentals, enterprise software development, and advanced database management systems. Core curriculum includes Data Structures, Operating Systems, Computer Networks, Database Management, Web Technologies, and Software Engineering.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Senior Secondary Education (12th Grade, Science Stream)</h3>
+                        <p class="year">2025 | St. Aloysius Secondary School, Lucknow</p>
+                        <p>Higher Secondary education with emphasis on analytical reasoning and quantitative skills. Developed foundational expertise in science and mathematics, establishing the academic foundation for undergraduate computer applications study.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Professional Certifications</h3>
+                        <p class="year">2024-2025</p>
+                        <p>MS Office Fundamentals (Word, Excel, PowerPoint) | SQL Database Fundamentals | C Programming Fundamentals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Information</h2>
+            <p class="section-subtitle">Available for opportunities in data management, business analytics, and related professional roles</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:alizbafatima211@gmail.com">alizbafatima211@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <p><a href="tel:+916393783300">+91 6393783300</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>Location</h3>
+                    <p>Lucknow, Uttar Pradesh, India</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem;">
+                <a href="mailto:alizbafatima211@gmail.com" class="btn btn-secondary" style="display: inline-block;">Send Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Alizba Fatima. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active nav link highlighting
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.style.color = 'var(--primary)';
+                } else {
+                    link.style.color = 'var(--text-dark)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
